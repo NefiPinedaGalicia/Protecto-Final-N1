@@ -3,3 +3,9 @@
  * Este bloque de código contiene la funcionalidad principal
  * que define el comportamiento del programa.
  */
+
+import { createCards } from './utils.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    createCards();
+});

@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/output.css">
-    <script src="./src/scripts/main.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/output.css" />
+    <script type="module" src="./src/scripts/main.js" defer></script>
     <title>PF Windbnd Vanilla</title>
-</head>
-<body>
-    <h1 class="bg-slate-800 text-white text-2xl">Hola mundo!</h1>
-</body>
+  </head>
+  <body>
+    <header
+      id="header"
+      class="px-4 md:px-16 pt-4 md:flex md:items-center md:justify-between">
+      <div class="mb-4 md:mb-0">
+        <img
+          src="./src/images/icons/logo-f7862584.svg"
+          alt="Logo"
+          class="h-8" />
+      </div>
+
+      <div
+        id="search-container"
+        class="flex items-center bg-white rounded-2xl border border-gray-200 p-2 mx-auto w-full max-w-sm md:mx-0 md:max-w-md lg:max-w-lg">
+        <div class="flex divide-x divide-gray-300 flex-1">
+          <button
+            id="add-location"
+            class="text-gray-500 text-sm text-center py-2 px-6 flex-1">
+            Add location
+          </button>
+          <button
+            id="add-guest"
+            class="text-gray-500 text-sm text-center py-2 px-6 flex-1">
+            Add guest
+          </button>
+        </div>
+        <div class="border-l border-gray-300 pl-2">
+          <button id="search-svg" class="bg-white p-2 rounded-full">
+            <svg
+              class="w-4 h-4 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div id="title-container" class="px-4 md:px-16 pt-6 flex justify-between items-center ">
+      <h3 class="text-2xl font-bold">Stays in Finland</h3>
+      <p id="stays-count" class="text-gray-500 text-sm">12+ stays</p>
+    </div>
+    <div id="cards-container" class="px-4 md:px-16 pt-4">
+      <div
+        id="card-container"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+    <!-- <div id="location-container"></div>
+    <div id="guest-conatiner"></div>
+     -->
+  </body>
 </html>
