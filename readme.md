@@ -32,6 +32,8 @@ Este comando se encargará de compilar los estilos cada vez que uses clases de T
 - **`src/scripts/guestContainer.js`**: Controla los contadores de huéspedes (adultos y niños) con botones +/- y gestión de estados deshabilitados. 👥
 - **`src/scripts/desktopFunction.js`**: Gestiona el comportamiento específico de desktop para resaltar campos y mostrar/ocultar contenedores de ubicación y huéspedes. 💻
 - **`src/scripts/searchingFilter.js`**: Implementa el autocompletado de ubicaciones con dropdown de sugerencias, selección de ciudades y gestión responsiva de contenedores. 🔍
+- **`src/scripts/darkMode.js`**: Controla el toggle entre modo claro y oscuro con un switch animado, guardando la preferencia del usuario en localStorage. 🌙
+- **`src/scripts/sortByRating.js`**: Maneja el ordenamiento de cards por calificación con 3 estados: descendente, ascendente y orden original. Funciona con búsquedas filtradas. ⭐
 
 ```plaintext
 📂 ├── src/
@@ -42,10 +44,13 @@ Este comando se encargará de compilar los estilos cada vez que uses clases de T
          📄 ├── headerButton.js
          📄 ├── guestContainer.js
          📄 ├── desktopFunction.js
-         📄 └── searchingFilter.js
+         📄 ├── searchingFilter.js
+         📄 ├── darkMode.js
+         📄 └── sortByRating.js
     🖼️ ├── images/
          🖼️ └── design/
 📄 ├── index.html
+📄 ├── tailwind.config.js
 📦 ├── package.json
 📖 └── README.md
 🚫 └── .gitignore
