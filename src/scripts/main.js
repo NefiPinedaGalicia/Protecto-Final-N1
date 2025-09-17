@@ -5,6 +5,10 @@
  */
 
 import { createCards } from './utils.js';
+import './headerButton.js';
+import './guestContainer.js';
+import './desktopFunction.js';
+import './searchingFilter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     createCards();
