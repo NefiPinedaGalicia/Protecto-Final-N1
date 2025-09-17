@@ -9,6 +9,8 @@ import './headerButton.js';
 import './guestContainer.js';
 import './desktopFunction.js';
 import './searchingFilter.js';
+import './darkMode.js';
+import './sortByRating.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     createCards();
