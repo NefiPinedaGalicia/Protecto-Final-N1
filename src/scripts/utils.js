@@ -8,10 +8,12 @@ export function createCards() {
 
   stays.forEach((stay) => {
     const card = document.createElement("div");
-    card.className = "mb-6";
+    card.className = "mb-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg";
 
     card.innerHTML = `
-      <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover rounded-2xl mb-3">
+      <div class="overflow-hidden rounded-2xl mb-3">
+        <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+      </div>
       <div class="flex justify-between items-start mb-2 px-2">
         <div class="flex items-center space-x-2">
           ${stay.superHost ? `<span class="border text-xs px-2 py-1 rounded-full" style="font-family: 'Montserrat', sans-serif; border-color: ${isDark ? '#e5e7eb' : '#1f2937'}; color: ${isDark ? '#e5e7eb' : '#1f2937'};">SUPERHOST</span>` : ""}
@@ -106,22 +108,25 @@ export function displaySearchResults(results) {
   
   results.forEach((stay) => {
     const card = document.createElement('div');
-    card.className = 'mb-6';
+    card.className = 'mb-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg';
+    const isDark = document.documentElement.classList.contains('dark');
     card.innerHTML = `
-      <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover rounded-2xl mb-3">
+      <div class="overflow-hidden rounded-2xl mb-3">
+        <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+      </div>
       <div class="flex justify-between items-start mb-2 px-2">
         <div class="flex items-center space-x-2">
-          ${stay.superHost ? '<span class="border border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 text-xs px-2 py-1 rounded-full" style="font-family: \'Montserrat\', sans-serif;">SUPERHOST</span>' : ''}
-          <span class="text-gray-600 dark:text-gray-400 text-sm" style="font-family: 'Mulish', sans-serif;">${stay.type}${stay.beds ? `, ${stay.beds} beds` : ''}</span>
+          ${stay.superHost ? `<span class="border text-xs px-2 py-1 rounded-full" style="font-family: 'Montserrat', sans-serif; border-color: ${isDark ? '#e5e7eb' : '#1f2937'}; color: ${isDark ? '#e5e7eb' : '#1f2937'};">SUPERHOST</span>` : ''}
+          <span class="text-sm" style="font-family: 'Mulish', sans-serif; color: ${isDark ? '#9ca3af' : '#6b7280'};">${stay.type}${stay.beds ? `, ${stay.beds} beds` : ''}</span>
         </div>
         <div class="flex items-center space-x-1">
           <svg class="w-4 h-4 fill-red-500" viewBox="0 0 24 24">
             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
           </svg>
-          <span class="text-sm dark:text-gray-300" style="font-family: 'Mulish', sans-serif;">${stay.rating.toFixed(1)}</span>
+          <span class="text-sm" style="font-family: 'Mulish', sans-serif; color: ${isDark ? '#d1d5db' : '#6b7280'};">${stay.rating.toFixed(1)}</span>
         </div>
       </div>
-      <h3 class="text-lg font-bold px-2 dark:text-white" style="font-family: 'Montserrat', sans-serif;">${stay.title}</h3>
+      <h3 class="text-lg font-bold px-2" style="font-family: 'Montserrat', sans-serif; color: ${isDark ? '#ffffff' : '#000000'};">${stay.title}</h3>
     `;
     container.appendChild(card);
   });

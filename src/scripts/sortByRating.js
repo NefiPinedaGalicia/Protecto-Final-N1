@@ -33,9 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         cardContainer.innerHTML = '';
         currentStays.forEach(stay => {
             const card = document.createElement('div');
-            card.className = 'mb-6';
+            card.className = 'mb-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg';
             card.innerHTML = `
-                <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover rounded-2xl mb-3">
+                <div class="overflow-hidden rounded-2xl mb-3">
+                    <img src="${stay.photo}" alt="${stay.title}" class="w-full h-64 object-cover transition-transform duration-300 hover:scale-110">
+                </div>
                 <div class="flex justify-between items-start mb-2 px-2">
                     <div class="flex items-center space-x-2">
                         ${stay.superHost ? `<span class="border text-xs px-2 py-1 rounded-full" style="font-family: 'Montserrat', sans-serif; border-color: ${isDark ? '#e5e7eb' : '#1f2937'}; color: ${isDark ? '#e5e7eb' : '#1f2937'};">SUPERHOST</span>` : ''}

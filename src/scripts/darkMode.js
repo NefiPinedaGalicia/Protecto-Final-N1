@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const overlayHovers = document.querySelectorAll('#search-container-mobile .hover\\:bg-gray-50');
         const locationContainers = document.querySelectorAll('#container-location, #container-location-mobile');
         const formFields = document.querySelectorAll('#search-container-mobile form > div');
+        const headerButton = document.getElementById('search-container');
         
         // Función para aplicar estilos a elementos dinámicos
         const applyDynamicStyles = (isDark) => {
@@ -95,6 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
             
+            // Botón del header
+            if (headerButton) {
+                headerButton.style.backgroundColor = isDark ? '#374151' : '#ffffff';
+                headerButton.style.borderColor = isDark ? '#4b5563' : '#e5e7eb';
+                
+                const headerTexts = headerButton.querySelectorAll('div');
+                headerTexts.forEach(text => {
+                    text.style.color = isDark ? '#d1d5db' : '#6b7280';
+                });
+                
+                const headerIcon = headerButton.querySelector('svg');
+                if (headerIcon) headerIcon.style.color = '#ef4444';
+            }
+            
             applyDynamicStyles(true);
             if (overlayGuestText) overlayGuestText.style.color = '#d1d5db';
             overlayButtons.forEach(btn => {
@@ -147,6 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
             
+            // Botón del header
+            if (headerButton) {
+                headerButton.style.backgroundColor = '#ffffff';
+                headerButton.style.borderColor = '#e5e7eb';
+                
+                const headerTexts = headerButton.querySelectorAll('div');
+                headerTexts.forEach(text => {
+                    text.style.color = '#6b7280';
+                });
+                
+                const headerIcon = headerButton.querySelector('svg');
+                if (headerIcon) headerIcon.style.color = '#ef4444';
+            }
+            
             applyDynamicStyles(false);
             if (overlayGuestText) overlayGuestText.style.color = '#4b5563';
             overlayButtons.forEach(btn => {
@@ -190,6 +219,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.style.color = isDark ? '#ffffff' : '#000000';
                     const icon = item.querySelector('svg');
                     if (icon) icon.style.fill = isDark ? '#ffffff' : '#000000';
+                    
+                    // Configurar hover para cada item
+                    item.addEventListener('mouseenter', () => {
+                        item.style.backgroundColor = isDark ? '#4b5563' : '#f3f4f6';
+                    });
+                    item.addEventListener('mouseleave', () => {
+                        item.style.backgroundColor = isDark ? '#374151' : '#ffffff';
+                    });
                 });
                 
                 // Mensaje de "no encontrado"
