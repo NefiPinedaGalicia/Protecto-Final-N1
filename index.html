@@ -70,8 +70,8 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </div>
     <!-- Contenedor de búsqueda-->
-    <div id="search-overlay" class="hidden inset-0 bg-black/30 md:bg-black/50 z-40">
-      <div id="search-container-mobile" class="fixed inset-0 bg-white z-50 h-[85vh] md:h-[50vh] flex flex-col">
+    <div id="search-overlay" class="hidden inset-0 bg-black/30 md:bg-black/50 z-40 transition-all duration-300 opacity-0">
+      <div id="search-container-mobile" class="fixed inset-0 bg-white z-50 h-[85vh] md:h-[50vh] flex flex-col transform transition-all duration-300 ease-out -translate-y-full">
         <!-- Encabezado móvil con título y botón cerrar -->
         <div class="flex justify-between items-center p-4 md:hidden">
           <h2 class="text-lg font-semibold" style="font-family: 'Montserrat', sans-serif;">Edit your search</h2>
@@ -90,12 +90,12 @@
             <div id="container-form" class="w-full">
               <form class="border-2 border-gray-300 rounded-2xl bg-white w-full max-w-none md:grid md:grid-cols-3 md:divide-y-0 divide-y divide-gray-200">
               <!-- Campo LOCATION -->
-              <div class="p-3 rounded-2xl relative z-0">
+              <div class="p-3 rounded-2xl relative z-0 transition-all duration-200 border-2 border-transparent">
                 <label class="block text-xs font-semibold text-gray-800 mb-1 text-left" style="font-family: 'Montserrat', sans-serif;">LOCATION</label>
                 <input type="text" class="w-full text-left text-gray-600 text-sm outline-none" placeholder="Add location" style="font-family: 'Mulish', sans-serif;" />
               </div>
               <!-- Campo GUESTS -->
-              <div class="p-3 rounded-2xl relative z-0">
+              <div class="p-3 rounded-2xl relative z-0 transition-all duration-200 border-2 border-transparent">
                 <label class="block text-xs font-semibold text-gray-800 mb-1 text-left" style="font-family: 'Montserrat', sans-serif;">GUESTS</label>
                 <div class="text-left text-gray-600 text-sm" style="font-family: 'Mulish', sans-serif;">
                   <span id="guest-count">0</span> <span>guests</span>
